@@ -1,0 +1,164 @@
+{
+  "GPP_global_amean": {
+    "long_name": "Gross Primary Productivity",
+    "native_units": "gC m-2 s-1",
+    "display_units": "PgC yr-1",
+    "conversion_factor": 4266365.63874467
+  },
+  "NPP_global_amean": {
+    "long_name": "Net Primary Productivity",
+    "native_units": "gC m-2 s-1",
+    "display_units": "PgC yr-1",
+    "conversion_factor": 4266365.63874467
+  },
+  "NEP_global_amean": {
+    "long_name": "Net Ecosystem Production",
+    "native_units": "gC m-2 s-1",
+    "display_units": "PgC yr-1",
+    "conversion_factor": 4266365.63874467
+  },
+  "NBP_global_amean": {
+    "long_name": "Net Biome Production",
+    "native_units": "gC m-2 s-1",
+    "display_units": "PgC yr-1",
+    "conversion_factor": 4266365.63874467
+  },
+  "ER_global_amean": {
+    "long_name": "Ecosystem Respiration",
+    "native_units": "gC m-2 s-1",
+    "display_units": "PgC yr-1",
+    "conversion_factor": 4266365.63874467
+  },
+  "AR_global_amean": {
+    "long_name": "Autotrophic Respiration",
+    "native_units": "gC m-2 s-1",
+    "display_units": "PgC yr-1",
+    "conversion_factor": 4266365.63874467
+  },
+  "HR_global_amean": {
+    "long_name": "Heterotrophic Respiration",
+    "native_units": "gC m-2 s-1",
+    "display_units": "PgC yr-1",
+    "conversion_factor": 4266365.63874467
+  },
+  "percentNPP_forNuptake": {
+    "long_name": "NPP_NUPTAKE / total NPP",
+    "native_units": "%",
+    "display_units": "%",
+    "conversion_factor": 1.0
+  },
+  "COL_FIRE_CLOSS_global_amean": {
+    "long_name": "Carbon Loss from Fire",
+    "native_units": "gC m-2 s-1",
+    "display_units": "PgC yr-1",
+    "conversion_factor": 4266365.63874467
+  },
+  "LAND_USE_FLUX_global_amean": {
+    "long_name": "Land Use Carbon Flux",
+    "native_units": "gC m-2 s-1",
+    "display_units": "PgC yr-1",
+    "conversion_factor": 4266365.63874467
+  },
+  "TOTVEGC_global_amean": {
+    "long_name": "Total Vegetation Carbon",
+    "native_units": "gC m-2",
+    "display_units": "PgC",
+    "conversion_factor": 0.13528556693127441
+  },
+  "TOTSOMC_1m_global_amean": {
+    "long_name": "Soil Organic Matter Carbon (top 1 m)",
+    "native_units": "gC m-2",
+    "display_units": "PgC",
+    "conversion_factor": 0.13528556693127441
+  },
+  "TLAI_global_amax": {
+    "long_name": "Leaf Area Index (annual max)",
+    "native_units": "m2 m-2",
+    "display_units": "m2 m-2",
+    "conversion_factor": 1.0
+  },
+  "FAREA_BURNED_global_amean": {
+    "long_name": "Burned area",
+    "native_units": "s-1",
+    "display_units": "million km2 yr-1",
+    "conversion_factor": 4266365638.74467
+  },
+  "EFLX_LH_TOT_global_amean": {
+    "long_name": "Latent Heat Flux",
+    "native_units": "W m-2",
+    "display_units": "W m-2",
+    "conversion_factor": 1.0
+  },
+  "FCTR_global_amean": {
+    "long_name": "Canopy Transpiration",
+    "native_units": "W m-2",
+    "display_units": "W m-2",
+    "conversion_factor": 1.0
+  },
+  "FCEV_global_amean": {
+    "long_name": "Canopy Evaporation",
+    "native_units": "W m-2",
+    "display_units": "W m-2",
+    "conversion_factor": 1.0
+  },
+  "FGEV_global_amean": {
+    "long_name": "Ground Evaporation",
+    "native_units": "W m-2",
+    "display_units": "W m-2",
+    "conversion_factor": 1.0
+  },
+  "TransFrac_global_amean": {
+    "long_name": "Transpiration / Evapotranspiration",
+    "native_units": "fraction",
+    "display_units": "fraction",
+    "conversion_factor": 1.0
+  },
+  "FSH_global_amean": {
+    "long_name": "Sensible Heat Flux",
+    "native_units": "W m-2",
+    "display_units": "W m-2",
+    "conversion_factor": 1.0
+  },
+  "FSR_global_amean": {
+    "long_name": "Reflected Shortwave Radiation",
+    "native_units": "W m-2",
+    "display_units": "W m-2",
+    "conversion_factor": 1.0
+  },
+  "Albedo_global_amean": {
+    "long_name": "Albedo",
+    "native_units": " ",
+    "display_units": " ",
+    "conversion_factor": 1.0
+  },
+  "QRUNOFF_global_amean": {
+    "long_name": "Runoff",
+    "native_units": "mm s-1",
+    "display_units": "mm yr-1",
+    "conversion_factor": 31536000
+  },
+  "SOILWATER_10CM_global_amean": {
+    "long_name": "Soil Water (top 10cm)",
+    "native_units": "kg m-2",
+    "display_units": "kg m-2",
+    "conversion_factor": 1.0
+  },
+  "H2OSNO_global_amean": {
+    "long_name": "Snow Water Equivalent",
+    "native_units": "mm",
+    "display_units": "mm",
+    "conversion_factor": 1.0
+  },
+  "ALTMAX_global_amean": {
+    "long_name": "Maximum Active Layer Thickness",
+    "native_units": "m",
+    "display_units": "m",
+    "conversion_factor": 1.0
+  },
+  "TOTECOSYSN_global_amean": {
+    "long_name": "Total Ecosystem Nitrogen",
+    "native_units": "gN m-2",
+    "display_units": "PgN",
+    "conversion_factor": 0.13528556693127441
+  }
+}

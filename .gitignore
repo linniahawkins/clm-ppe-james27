@@ -1,0 +1,6 @@
+.ipynb_checkpoints/
+__pycache__/
+*.egg-info/
+*.zarr/
+.DS_Store
+clm-hmc/hmc_results/posterior_samples.csv
