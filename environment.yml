@@ -1,0 +1,38 @@
+# Python environment used for emulator training, history matching, HMC
+# calibration, post-processing, and figures. Versions are pinned to those used
+# for the paper (from the mlenv environment on NCAR Derecho/Casper).
+#
+#   conda env create -f environment.yml
+#   conda activate clm6-ppe
+name: clm6-ppe
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - numpy=1.26.4
+  - pandas=2.1.4
+  - xarray=2024.3.0
+  - matplotlib=3.8.4
+  - netcdf4=1.6.3
+  - cftime=1.6.0
+  - nc-time-axis
+  - h5py=3.8.0
+  - pip:
+      # emulators and calibration
+      - tensorflow==2.18.0
+      - tensorflow-probability==0.25.0
+      - tf-keras==2.18.0
+      - gpflow==2.9.2
+      - scikit-learn==1.6.1
+      - scikit-optimize==0.10.2
+      - scipy==1.15.1
+      # parallel post-processing / history matching on HPC
+      - dask==2025.1.0
+      - distributed==2025.1.0
+      - dask-jobqueue==0.9.0
+      # plotting
+      - cartopy==0.24.1
+      - seaborn==0.13.2
+      # notebooks
+      - ipykernel==6.29.5
