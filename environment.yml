@@ -3,8 +3,8 @@
 # for the paper (from the mlenv environment on NCAR Derecho/Casper).
 #
 #   conda env create -f environment.yml
-#   conda activate clm6-ppe
-name: clm6-ppe
+#   conda activate clm-ppe
+name: clm-ppe
 channels:
   - conda-forge
 dependencies:
