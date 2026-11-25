@@ -22,19 +22,17 @@ if gpus:
         tf.config.experimental.set_memory_growth(gpu, True)
     print(f"Using {len(gpus)} GPU(s)")
 
-sys.path.append('/glade/u/home/linnia/CLM6-PPE/')
-
 # =============================================================================
 # Configuration
 # =============================================================================
 
-UTILS_PATH = '/glade/u/home/linnia/CLM6-PPE/utils/'
+UTILS_PATH = '../utils/'
 EMULATOR_PATHS = {
-    'lai': '/glade/u/home/linnia/CLM6-PPE/clm6-calibration/emulators/biome_lai_',
-    'gpp': '/glade/u/home/linnia/CLM6-PPE/clm6-calibration/emulators/biome_gpp_',
-    'biomass': '/glade/u/home/linnia/CLM6-PPE/clm6-calibration/emulators/biome_tvc_',
-    'lh': '/glade/u/home/linnia/CLM6-PPE/clm6-calibration/emulators/biome_lh_',
-    'somc': '/glade/u/home/linnia/CLM6-PPE/clm6-calibration/emulators/somc_PgC_'
+    'lai': './emulators/biome_lai_',
+    'gpp': './emulators/biome_gpp_',
+    'biomass': './emulators/biome_tvc_',
+    'lh': './emulators/biome_lh_',
+    'somc': './emulators/somc_PgC_'
 }
 BIOMES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 N_PFTS = 14
@@ -49,7 +47,7 @@ TARGET_ACCEPT_PROB = 0.85
 USE_NUTS=False
 CHUNK_SIZE = 50  # Save a checkpoint every CHUNK_SIZE samples
 
-OUTPUT_DIR = '/glade/u/home/linnia/CLM6-PPE/clm6-calibration/hmc_results_longrun/'
+OUTPUT_DIR = './hmc_results/'
 CHECKPOINT_FILE = os.path.join(OUTPUT_DIR, 'checkpoint.npz')
 
 # =============================================================================
@@ -82,8 +80,7 @@ x_default = tf.constant(default_params.iloc[[0]].to_numpy(), dtype=tf.float64)
 n_params = len(all_columns)
 
 # Load observations
-obs_biome = xr.open_dataset('obs_statistics_byBiome.nc', engine='h5netcdf')
-somc_obs = xr.open_dataset(UTILS_PATH + 'SOMC_statistics_PgC.nc', engine='h5netcdf')
+obs_biome = xr.open_dataset('../data/obs_statistics_byBiome.nc', engine='h5netcdf')
 
 # =============================================================================
 # Load emulators and build target/index arrays
@@ -104,21 +101,6 @@ for b in BIOMES:
         targets.append(obs_biome[f'{metric}_mean'].isel(biome=b).values)
         stdevs.append(obs_biome[f'{metric}_stdev'].isel(biome=b).values)
         emulators.append(tf.saved_model.load(f"{EMULATOR_PATHS[path_key]}{b}"))
-
-# SOMC
-param_names = get_biome_param_names(14)
-param_ix = [default_params.columns.get_loc(p) for p in param_names]
-param_indices.append(param_ix)
-targets.append(somc_obs['nonarctic_mean'].values)
-stdevs.append(somc_obs['nonarctic_stdev'].values)
-emulators.append(tf.saved_model.load(f"{EMULATOR_PATHS['somc']}{'non-arctic'}"))
-
-param_names = get_biome_param_names(15)
-param_ix = [default_params.columns.get_loc(p) for p in param_names]
-param_indices.append(param_ix)
-targets.append(somc_obs['arctic_mean'].values)
-stdevs.append(somc_obs['arctic_stdev'].values)
-emulators.append(tf.saved_model.load(f"{EMULATOR_PATHS['somc']}{'arctic'}"))
 
 # Convert to tensors
 targets_tf = tf.constant(np.array(targets), dtype=tf.float64)
